@@ -5,6 +5,7 @@ const helpContent = `
   |--- tech
   |--- projects
   |--- contact
+  |--- clear
   |
   `
 

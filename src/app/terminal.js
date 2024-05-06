@@ -20,6 +20,7 @@ const Terminal = () => {
     tech: techContent,
     projects: projectsContent,
     contact: contactContent,
+    clear: 'clear',
   }
 
   const handleInput = (e) => {
@@ -34,7 +35,11 @@ const Terminal = () => {
     e.preventDefault()
     const command = input.slice(2).trim().toLowerCase()
     if (commands[command]) {
-      setOutput([...output, input, commands[command]])
+      if (command === 'clear') {
+        setOutput([])
+      } else {
+        setOutput([...output, input, commands[command]])
+      }
     } else {
       setOutput([...output, input, 'Unknown command: ' + command])
     }
