@@ -31,7 +31,7 @@ const Terminal = () => {
   }
 
   return (
-    <div className='terminal bg-black text-white p-4 shadow-lg overflow-y-scroll text-md font-mono'>
+    <div className='terminal bg-black text-white py-16 px-36 shadow-lg overflow-y-scroll text-md font-mono'>
       {output.map((line, index) => (
         <p key={index}>{line}</p>
       ))}
