@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import {
   helpContent,
@@ -13,6 +13,12 @@ const Terminal = () => {
   const [output, setOutput] = useState([
     'Hello, this is November. Type ``help`` for a list of commands.',
   ])
+
+  const formRef = useRef(null)
+
+  useEffect(() => {
+    formRef.current.scrollIntoView({ behavior: 'smooth' })
+  }, [output])
 
   const commands = {
     help: helpContent,
@@ -59,7 +65,7 @@ const Terminal = () => {
           <p key={index}>{line}</p>
         ),
       )}
-      <form onSubmit={handleSubmit}>
+      <form ref={formRef} onSubmit={handleSubmit}>
         <input
           type='text'
           value={input}
