@@ -1,14 +1,25 @@
 import React, { useState } from 'react'
 
+import {
+  helpContent,
+  aboutContent,
+  techContent,
+  projectsContent,
+  contactContent,
+} from '../data/commands'
+
 const Terminal = () => {
   const [input, setInput] = useState('> ')
-  const [output, setOutput] = useState([])
+  const [output, setOutput] = useState([
+    'Hello, this is November. Type ``help`` for a list of commands.',
+  ])
 
   const commands = {
-    about: 'Your name. Your description.',
-    skills: 'Your skills.',
-    projects: 'Your projects.',
-    contact: 'Your contact information.',
+    help: helpContent,
+    about: aboutContent,
+    tech: techContent,
+    projects: projectsContent,
+    contact: contactContent,
   }
 
   const handleInput = (e) => {
@@ -32,9 +43,17 @@ const Terminal = () => {
 
   return (
     <div className='terminal bg-black text-white py-16 px-36 shadow-lg overflow-y-scroll text-md font-mono'>
-      {output.map((line, index) => (
-        <p key={index}>{line}</p>
-      ))}
+      {output.map((line, index) =>
+        typeof line === 'string' ? (
+          line
+            .split('\n')
+            .map((subLine, subIndex) => (
+              <p key={`${index}-${subIndex}`}>{subLine}</p>
+            ))
+        ) : (
+          <p key={index}>{line}</p>
+        ),
+      )}
       <form onSubmit={handleSubmit}>
         <input
           type='text'
