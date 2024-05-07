@@ -6,6 +6,7 @@ import {
   techContent,
   projectsContent,
   contactContent,
+  initialOutput,
 } from '../data/commands'
 
 function getTime() {
@@ -18,9 +19,7 @@ function getTime() {
 
 const Terminal = () => {
   const [input, setInput] = useState('N:/info ' + getTime() + ' > ')
-  const [output, setOutput] = useState([
-    'Hello, this is November. Type ``help`` for a list of commands.',
-  ])
+  const [output, setOutput] = useState([initialOutput])
 
   const formRef = useRef(null)
 
