@@ -22,3 +22,19 @@ input:focus {
 input[type='text'] {
   width: 100%;
 }
+
+input.bg-dark::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #ffffff;
+  opacity: 1; /* Firefox */
+}
+
+input.bg-dark:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ffffff;
+}
+
+input.bg-dark::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #ffffff;
+}

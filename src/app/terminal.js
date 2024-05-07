@@ -6,8 +6,8 @@ import {
   techContent,
   projectsContent,
   contactContent,
-  initialOutput,
 } from '../data/commands'
+import { initialOutput } from '../data/other'
 
 function getTime() {
   const date = new Date()
