@@ -8,14 +8,7 @@ import {
   contactContent,
 } from '../data/commands'
 import { initialOutput } from '../data/other'
-
-function getTime() {
-  const date = new Date()
-  const hours = date.getHours().toString().padStart(2, '0')
-  const minutes = date.getMinutes().toString().padStart(2, '0')
-  const seconds = date.getSeconds().toString().padStart(2, '0')
-  return `${hours}:${minutes}:${seconds}`
-}
+import { getTime } from '../utils/get-time'
 
 const Terminal = () => {
   const [input, setInput] = useState('N:/info ' + getTime() + ' > ')
