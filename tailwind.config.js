@@ -11,6 +11,7 @@ module.exports = {
         dark: '#151515',
         'input-dark': '#FFD369',
         'output-dark': '#EEEEEE',
+        note: '#FFD369',
       },
     },
   },
