@@ -8,8 +8,16 @@ import {
   contactContent,
 } from '../data/commands'
 
+function getTime() {
+  const date = new Date()
+  const hours = date.getHours().toString().padStart(2, '0')
+  const minutes = date.getMinutes().toString().padStart(2, '0')
+  const seconds = date.getSeconds().toString().padStart(2, '0')
+  return `${hours}:${minutes}:${seconds}`
+}
+
 const Terminal = () => {
-  const [input, setInput] = useState('> ')
+  const [input, setInput] = useState('N:/info ' + getTime() + ' > ')
   const [output, setOutput] = useState([
     'Hello, this is November. Type ``help`` for a list of commands.',
   ])
@@ -30,16 +38,22 @@ const Terminal = () => {
   }
 
   const handleInput = (e) => {
-    if (e.target.value.slice(0, 2) !== '> ') {
-      setInput('> ' + e.target.value)
+    const newValue = e.target.value
+    const prompt = 'N:/info ' + getTime() + ' > '
+
+    if (newValue.length < prompt.length && !newValue.startsWith(prompt)) {
+      setInput((prevInput) => prevInput)
     } else {
-      setInput(e.target.value)
+      setInput(newValue)
     }
   }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const command = input.slice(2).trim().toLowerCase()
+    const command = input
+      .slice(getTime().length + 11)
+      .trim()
+      .toLowerCase()
     if (commands[command]) {
       if (command === 'clear') {
         setOutput([])
@@ -49,11 +63,11 @@ const Terminal = () => {
     } else {
       setOutput([...output, input, 'Unknown command: ' + command])
     }
-    setInput('> ')
+    setInput('N:/info ' + getTime() + ' > ')
   }
 
   return (
-    <div className='terminal bg-black text-white py-16 px-36 shadow-lg overflow-y-scroll text-md font-mono'>
+    <div className='terminal bg-dark text-output-dark py-16 px-36 shadow-lg overflow-y-scroll text-md font-mono'>
       {output.map((line, index) =>
         typeof line === 'string' ? (
           line
@@ -70,7 +84,7 @@ const Terminal = () => {
           type='text'
           value={input}
           onChange={handleInput}
-          className='bg-black border-none'
+          className='bg-dark border-none text-input-dark'
         />
       </form>
     </div>
