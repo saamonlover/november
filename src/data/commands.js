@@ -68,6 +68,7 @@ const projectsContent = `
     |--- A Discord bot that plays music in voice channels
     |---|--- Tech: Node.js, Discord.js, Spotify API, YouTube API
     |---|--- DevOps: Heroku, pm2
+    |---|--- Invite Link: https://top.gg/bot/1233204961337413704?s=0693002901491
     |
     Guild Manager Discord Bot
     |--- A Discord bot that manages guild business including orderings, giftings, and more
