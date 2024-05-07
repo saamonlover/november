@@ -5,6 +5,10 @@ const initialOutputSplitted = [
   '██║╚██╗██║██║   ██║╚██╗ ██╔╝██╔══╝  ██║╚██╔╝██║██╔══██╗██╔══╝  ██╔══██╗',
   '██║ ╚████║╚██████╔╝ ╚████╔╝ ███████╗██║ ╚═╝ ██║██████╔╝███████╗██║  ██║',
   '╚═╝  ╚═══╝ ╚═════╝   ╚═══╝  ╚══════╝╚═╝     ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝',
+  '|',
+  "|- This is November, Ricky's portfolio bot",
+  '|- Type `help` to see a list of available commands',
+  '|',
 ]
 
 const initialOutput = initialOutputSplitted.join('\n')
