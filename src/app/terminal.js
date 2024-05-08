@@ -59,7 +59,7 @@ const Terminal = () => {
   }
 
   return (
-    <div className='terminal bg-dark text-output-dark py-16 px-36 shadow-lg overflow-y-scroll text-md font-mono'>
+    <div className='terminal bg-dark text-output-dark py-8 px-8 md:py-16 md:px-16 lg:py-16 lg:px-36 text-xs sm:text-sm md:text-md overflow-y-scroll font-mono'>
       {output.map((line, index) =>
         typeof line === 'string' ? (
           line

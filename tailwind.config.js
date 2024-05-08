@@ -13,6 +13,9 @@ module.exports = {
         'output-dark': '#EEEEEE',
         note: '#FFD369',
       },
+      fontSize: {
+        xs: '0.5rem',
+      },
     },
   },
   plugins: [],
